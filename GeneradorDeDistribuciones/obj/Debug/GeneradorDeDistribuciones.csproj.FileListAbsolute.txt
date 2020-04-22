@@ -8,3 +8,13 @@ C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\4to\Simulacion\Trabajos Practic
 C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\4to\Simulacion\Trabajos Practicos\TP3-GeneradorDistribuciones\GeneradorDeDistribuciones\obj\Debug\GeneradorDeDistribuciones.exe
 C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\4to\Simulacion\Trabajos Practicos\TP3-GeneradorDistribuciones\GeneradorDeDistribuciones\obj\Debug\GeneradorDeDistribuciones.pdb
 C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\4to\Simulacion\Trabajos Practicos\TP3-GeneradorDistribuciones\GeneradorDeDistribuciones\obj\Debug\GeneradorDeDistribuciones.csprojAssemblyReference.cache
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\obj\Debug\GeneradorDeDistribuciones.csprojAssemblyReference.cache
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\obj\Debug\GeneradorDeDistribuciones.Generador.resources
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\obj\Debug\GeneradorDeDistribuciones.Properties.Resources.resources
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\obj\Debug\GeneradorDeDistribuciones.csproj.GenerateResource.cache
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\obj\Debug\GeneradorDeDistribuciones.csproj.CoreCompileInputs.cache
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\obj\Debug\GeneradorDeDistribuciones.exe
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\obj\Debug\GeneradorDeDistribuciones.pdb
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\bin\Debug\GeneradorDeDistribuciones.exe.config
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\bin\Debug\GeneradorDeDistribuciones.exe
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\bin\Debug\GeneradorDeDistribuciones.pdb

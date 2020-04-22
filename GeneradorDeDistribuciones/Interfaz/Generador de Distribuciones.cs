@@ -29,12 +29,12 @@ namespace GeneradorDeDistribuciones
         private double parametro;
 
         // Distribucion normal
-        private double media;
+        private double mediaNormal;
         private double desviacion;
 
 
         // Distribucion Poisson
-
+        private double mediaPoisson;
 
         // Grafico
         private int cantIntervalos;
@@ -105,7 +105,7 @@ namespace GeneradorDeDistribuciones
 
             if (cb_TipoDistribucion.SelectedIndex == 2)
             {
-                media = Convert.ToDouble(txt_normal_media.Text);
+                mediaNormal = Convert.ToDouble(txt_normal_media.Text);
                 desviacion = Convert.ToDouble(txt_normal_desviacion.Text);
 
                 // Inicializo el generador y genero las distribuciones
@@ -115,8 +115,24 @@ namespace GeneradorDeDistribuciones
                 vectorAleatorios = generador.generarAleatorios01(cantidad);
 
                 // Normal
-                vectorDistribucion = generador.normal(vectorAleatorios, media, desviacion);
+                vectorDistribucion = generador.normal(vectorAleatorios, mediaNormal, desviacion);
 
+
+            }
+
+
+            if (cb_TipoDistribucion.SelectedIndex == 3)
+            {
+                mediaPoisson = Convert.ToDouble(txt_poisson_media.Text);
+
+                // Inicializo el generador y genero las distribuciones
+                GeneradorAleatorios generador = new GeneradorAleatorios();
+
+                // Uniforme (0-1)
+                vectorAleatorios = generador.generarAleatorios01(cantidad);
+
+                // Poisson
+                vectorDistribucion = generador.poisson(vectorAleatorios, mediaPoisson);
 
             }
 
@@ -124,6 +140,10 @@ namespace GeneradorDeDistribuciones
 
 
         }
+
+
+
+
 
 
 
@@ -144,6 +164,16 @@ namespace GeneradorDeDistribuciones
             }
             grilla_generados.DataSource = myDataTable;
         }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -201,6 +231,15 @@ namespace GeneradorDeDistribuciones
 
 
 
+
+
+
+
+
+
+
+
+
         private void Cb_TipoDistribucion_SelectedIndexChanged(object sender, EventArgs e)
         {
             btn_generar.Enabled = true;
@@ -243,12 +282,25 @@ namespace GeneradorDeDistribuciones
 
 
 
+
+
+
+
+
         private void Btn_generar_Click(object sender, EventArgs e)
         {
             tomarDatos();
             llenarGrilla();
             cb_intervalos.Enabled = true;
         }
+
+
+
+
+
+
+
+
 
         private void Cb_intervalos_SelectedIndexChanged(object sender, EventArgs e)
         {

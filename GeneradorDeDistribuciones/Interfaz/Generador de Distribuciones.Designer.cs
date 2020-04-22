@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gb_1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btn_generar = new System.Windows.Forms.Button();
             this.gb_poisson = new System.Windows.Forms.GroupBox();
             this.gb_normal = new System.Windows.Forms.GroupBox();
+            this.txt_normal_desviacion = new System.Windows.Forms.MaskedTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_normal_media = new System.Windows.Forms.MaskedTextBox();
             this.gb_exponencial = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_expNeg_param = new System.Windows.Forms.MaskedTextBox();
+            this.cb_expNeg = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_TipoDistribucion = new System.Windows.Forms.ComboBox();
             this.gb_uniforme = new System.Windows.Forms.GroupBox();
@@ -45,20 +56,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_cantidad = new System.Windows.Forms.MaskedTextBox();
             this.grilla_generados = new System.Windows.Forms.DataGridView();
-            this.btn_generar = new System.Windows.Forms.Button();
-            this.cb_expNeg = new System.Windows.Forms.ComboBox();
-            this.txt_expNeg_param = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txt_normal_media = new System.Windows.Forms.MaskedTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt_normal_desviacion = new System.Windows.Forms.MaskedTextBox();
             this.grafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cb_intervalos = new System.Windows.Forms.ComboBox();
+            this.txt_poisson_media = new System.Windows.Forms.MaskedTextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.gb_1.SuspendLayout();
+            this.gb_poisson.SuspendLayout();
             this.gb_normal.SuspendLayout();
             this.gb_exponencial.SuspendLayout();
             this.gb_uniforme.SuspendLayout();
@@ -87,8 +90,47 @@
             this.gb_1.TabIndex = 0;
             this.gb_1.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(686, 67);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Poisson";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(481, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Normal";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(240, 67);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Exponencial Negativa";
+            // 
+            // btn_generar
+            // 
+            this.btn_generar.Location = new System.Drawing.Point(459, 13);
+            this.btn_generar.Name = "btn_generar";
+            this.btn_generar.Size = new System.Drawing.Size(109, 34);
+            this.btn_generar.TabIndex = 7;
+            this.btn_generar.Text = "Generar";
+            this.btn_generar.UseVisualStyleBackColor = true;
+            this.btn_generar.Click += new System.EventHandler(this.Btn_generar_Click);
+            // 
             // gb_poisson
             // 
+            this.gb_poisson.Controls.Add(this.label11);
+            this.gb_poisson.Controls.Add(this.txt_poisson_media);
             this.gb_poisson.Location = new System.Drawing.Point(614, 83);
             this.gb_poisson.Name = "gb_poisson";
             this.gb_poisson.Size = new System.Drawing.Size(183, 120);
@@ -107,6 +149,38 @@
             this.gb_normal.TabIndex = 6;
             this.gb_normal.TabStop = false;
             // 
+            // txt_normal_desviacion
+            // 
+            this.txt_normal_desviacion.Location = new System.Drawing.Point(73, 53);
+            this.txt_normal_desviacion.Name = "txt_normal_desviacion";
+            this.txt_normal_desviacion.Size = new System.Drawing.Size(94, 20);
+            this.txt_normal_desviacion.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 56);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Desviación";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 23);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(36, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Media";
+            // 
+            // txt_normal_media
+            // 
+            this.txt_normal_media.Location = new System.Drawing.Point(73, 20);
+            this.txt_normal_media.Name = "txt_normal_media";
+            this.txt_normal_media.Size = new System.Drawing.Size(94, 20);
+            this.txt_normal_media.TabIndex = 0;
+            // 
             // gb_exponencial
             // 
             this.gb_exponencial.Controls.Add(this.label5);
@@ -117,6 +191,34 @@
             this.gb_exponencial.Size = new System.Drawing.Size(183, 120);
             this.gb_exponencial.TabIndex = 5;
             this.gb_exponencial.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Parametro";
+            // 
+            // txt_expNeg_param
+            // 
+            this.txt_expNeg_param.Location = new System.Drawing.Point(65, 46);
+            this.txt_expNeg_param.Name = "txt_expNeg_param";
+            this.txt_expNeg_param.Size = new System.Drawing.Size(100, 20);
+            this.txt_expNeg_param.TabIndex = 1;
+            // 
+            // cb_expNeg
+            // 
+            this.cb_expNeg.FormattingEnabled = true;
+            this.cb_expNeg.Items.AddRange(new object[] {
+            "frecuencia (lambda)",
+            "media"});
+            this.cb_expNeg.Location = new System.Drawing.Point(44, 15);
+            this.cb_expNeg.Name = "cb_expNeg";
+            this.cb_expNeg.Size = new System.Drawing.Size(121, 21);
+            this.cb_expNeg.TabIndex = 0;
+            this.cb_expNeg.Text = "-Tipo de Parametro-";
             // 
             // label2
             // 
@@ -212,117 +314,20 @@
             this.grilla_generados.Size = new System.Drawing.Size(280, 343);
             this.grilla_generados.TabIndex = 1;
             // 
-            // btn_generar
-            // 
-            this.btn_generar.Location = new System.Drawing.Point(459, 13);
-            this.btn_generar.Name = "btn_generar";
-            this.btn_generar.Size = new System.Drawing.Size(109, 34);
-            this.btn_generar.TabIndex = 7;
-            this.btn_generar.Text = "Generar";
-            this.btn_generar.UseVisualStyleBackColor = true;
-            this.btn_generar.Click += new System.EventHandler(this.Btn_generar_Click);
-            // 
-            // cb_expNeg
-            // 
-            this.cb_expNeg.FormattingEnabled = true;
-            this.cb_expNeg.Items.AddRange(new object[] {
-            "frecuencia (lambda)",
-            "media"});
-            this.cb_expNeg.Location = new System.Drawing.Point(44, 15);
-            this.cb_expNeg.Name = "cb_expNeg";
-            this.cb_expNeg.Size = new System.Drawing.Size(121, 21);
-            this.cb_expNeg.TabIndex = 0;
-            this.cb_expNeg.Text = "-Tipo de Parametro-";
-            // 
-            // txt_expNeg_param
-            // 
-            this.txt_expNeg_param.Location = new System.Drawing.Point(65, 46);
-            this.txt_expNeg_param.Name = "txt_expNeg_param";
-            this.txt_expNeg_param.Size = new System.Drawing.Size(100, 20);
-            this.txt_expNeg_param.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 49);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Parametro";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(240, 67);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Exponencial Negativa";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(481, 67);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Normal";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(686, 67);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Poisson";
-            // 
-            // txt_normal_media
-            // 
-            this.txt_normal_media.Location = new System.Drawing.Point(73, 20);
-            this.txt_normal_media.Name = "txt_normal_media";
-            this.txt_normal_media.Size = new System.Drawing.Size(94, 20);
-            this.txt_normal_media.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 23);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Media";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 56);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Desviación";
-            // 
-            // txt_normal_desviacion
-            // 
-            this.txt_normal_desviacion.Location = new System.Drawing.Point(73, 53);
-            this.txt_normal_desviacion.Name = "txt_normal_desviacion";
-            this.txt_normal_desviacion.Size = new System.Drawing.Size(94, 20);
-            this.txt_normal_desviacion.TabIndex = 3;
-            // 
             // grafico
             // 
             this.grafico.BackColor = System.Drawing.Color.LightGray;
             this.grafico.BorderlineColor = System.Drawing.Color.Linen;
-            chartArea3.Name = "ChartArea1";
-            this.grafico.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.grafico.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.grafico.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.grafico.Legends.Add(legend1);
             this.grafico.Location = new System.Drawing.Point(291, 246);
             this.grafico.Name = "grafico";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.grafico.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.grafico.Series.Add(series1);
             this.grafico.Size = new System.Drawing.Size(517, 315);
             this.grafico.TabIndex = 2;
             this.grafico.Text = "chart1";
@@ -344,6 +349,22 @@
             this.cb_intervalos.Text = "- Cantidad Intervalos - ";
             this.cb_intervalos.SelectedIndexChanged += new System.EventHandler(this.Cb_intervalos_SelectedIndexChanged);
             // 
+            // txt_poisson_media
+            // 
+            this.txt_poisson_media.Location = new System.Drawing.Point(75, 20);
+            this.txt_poisson_media.Name = "txt_poisson_media";
+            this.txt_poisson_media.Size = new System.Drawing.Size(94, 20);
+            this.txt_poisson_media.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 23);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Media";
+            // 
             // Generador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,6 +380,8 @@
             this.Load += new System.EventHandler(this.Generador_Load);
             this.gb_1.ResumeLayout(false);
             this.gb_1.PerformLayout();
+            this.gb_poisson.ResumeLayout(false);
+            this.gb_poisson.PerformLayout();
             this.gb_normal.ResumeLayout(false);
             this.gb_normal.PerformLayout();
             this.gb_exponencial.ResumeLayout(false);
@@ -400,6 +423,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataVisualization.Charting.Chart grafico;
         private System.Windows.Forms.ComboBox cb_intervalos;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.MaskedTextBox txt_poisson_media;
     }
 }
 

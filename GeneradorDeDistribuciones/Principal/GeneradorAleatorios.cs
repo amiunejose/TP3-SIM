@@ -110,6 +110,35 @@ namespace GeneradorDeDistribuciones
 
 
 
+        public double[] poisson(double[] vectorAleatorios, double media)
+        {
+            int cantidad = vectorAleatorios.Length;
+
+            double[] vectorPoisson = new double[cantidad];
+
+            
+            double A = Math.Exp(-media);
+
+            for (int i = 0; i < cantidad ; i++)
+            {
+                double P = 1;
+                int X = -1;
+                do
+                {
+
+                    double U = vectorAleatorios[i];
+                    P = P * U;
+                    X = X + 1;
+                } while (P >= A);
+                vectorPoisson[i] = X;
+            }
+            return vectorPoisson;
+
+
+
+        }
+
+
 
     }
 }
