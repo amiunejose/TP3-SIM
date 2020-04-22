@@ -37,6 +37,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btn_generar = new System.Windows.Forms.Button();
             this.gb_poisson = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_poisson_media = new System.Windows.Forms.MaskedTextBox();
             this.gb_normal = new System.Windows.Forms.GroupBox();
             this.txt_normal_desviacion = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -58,8 +60,6 @@
             this.grilla_generados = new System.Windows.Forms.DataGridView();
             this.grafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cb_intervalos = new System.Windows.Forms.ComboBox();
-            this.txt_poisson_media = new System.Windows.Forms.MaskedTextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.gb_1.SuspendLayout();
             this.gb_poisson.SuspendLayout();
             this.gb_normal.SuspendLayout();
@@ -136,6 +136,22 @@
             this.gb_poisson.Size = new System.Drawing.Size(183, 120);
             this.gb_poisson.TabIndex = 6;
             this.gb_poisson.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 23);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Media";
+            // 
+            // txt_poisson_media
+            // 
+            this.txt_poisson_media.Location = new System.Drawing.Point(75, 20);
+            this.txt_poisson_media.Name = "txt_poisson_media";
+            this.txt_poisson_media.Size = new System.Drawing.Size(94, 20);
+            this.txt_poisson_media.TabIndex = 0;
             // 
             // gb_normal
             // 
@@ -316,21 +332,28 @@
             // 
             // grafico
             // 
-            this.grafico.BackColor = System.Drawing.Color.LightGray;
+            this.grafico.BackColor = System.Drawing.Color.RosyBrown;
             this.grafico.BorderlineColor = System.Drawing.Color.Linen;
+            chartArea1.BackColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.White;
             this.grafico.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
             legend1.Name = "Legend1";
             this.grafico.Legends.Add(legend1);
             this.grafico.Location = new System.Drawing.Point(291, 246);
             this.grafico.Name = "grafico";
+            this.grafico.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.ChartArea = "ChartArea1";
+            series1.EmptyPointStyle.Color = System.Drawing.Color.White;
+            series1.LabelBackColor = System.Drawing.Color.Transparent;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series1.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.Transparent;
+            series1.SmartLabelStyle.Enabled = false;
             this.grafico.Series.Add(series1);
             this.grafico.Size = new System.Drawing.Size(517, 315);
             this.grafico.TabIndex = 2;
-            this.grafico.Text = "chart1";
             // 
             // cb_intervalos
             // 
@@ -348,22 +371,6 @@
             this.cb_intervalos.TabIndex = 3;
             this.cb_intervalos.Text = "- Cantidad Intervalos - ";
             this.cb_intervalos.SelectedIndexChanged += new System.EventHandler(this.Cb_intervalos_SelectedIndexChanged);
-            // 
-            // txt_poisson_media
-            // 
-            this.txt_poisson_media.Location = new System.Drawing.Point(75, 20);
-            this.txt_poisson_media.Name = "txt_poisson_media";
-            this.txt_poisson_media.Size = new System.Drawing.Size(94, 20);
-            this.txt_poisson_media.TabIndex = 0;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 23);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(36, 13);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Media";
             // 
             // Generador
             // 

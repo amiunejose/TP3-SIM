@@ -167,7 +167,39 @@ namespace GeneradorDeDistribuciones
 
 
 
+        private double[] calcularRangos()
+        {
 
+            cantIntervalos = Convert.ToInt32(cb_intervalos.SelectedItem);
+
+            if (cb_TipoDistribucion.SelectedIndex == 3)
+            {
+                cantIntervalos = vectorDistribucion.Length;
+            }
+            double[] vectorRangos = new double[cantIntervalos];
+            double min = vectorDistribucion.Min();
+            double max = vectorDistribucion.Max();
+            double rango = max - min;
+            double salto = rango / cantIntervalos;
+
+
+
+
+            for (int i = 0; i < vectorDistribucion.Length; i++)
+            {
+                int indiceIntervalo = Convert.ToInt32(Math.Truncate((vectorDistribucion[i] - min) / salto));
+
+                if (indiceIntervalo == cantIntervalos)
+                {
+                    indiceIntervalo = cantIntervalos - 1;
+                }
+
+                vectorRangos[indiceIntervalo] += 1;
+            }
+
+
+            return vectorRangos;
+        }
 
 
 
@@ -180,48 +212,37 @@ namespace GeneradorDeDistribuciones
         private void llenarGrafico()
         {
 
-            cantIntervalos = Convert.ToInt32(cb_intervalos.SelectedItem);
-            int[] vectorRangos = new int[cantIntervalos];
-            double min = vectorDistribucion.Min();
-            double max = vectorDistribucion.Max();
-            double rango = max - min;
-            double salto = rango / cantIntervalos;
-            string[] series = new string[cantIntervalos];
+            string[] series;
+            double[] vectorRangos;
 
+            
+            vectorRangos = calcularRangos();
+
+
+            
+
+
+
+            series = new string[vectorRangos.Length];
             for (int i = 0; i < cantIntervalos; i++)
             {
                 series[i] = i.ToString();
             }
 
+            
 
-
-            for ( int i=0 ; i<vectorDistribucion.Length ; i++)
-            {
-                int indiceIntervalo = Convert.ToInt32(Math.Truncate((vectorDistribucion[i] - min) / salto));
-
-                if (indiceIntervalo == cantIntervalos)
-                {
-                    indiceIntervalo = cantIntervalos - 1;
-                }
-                
-                vectorRangos[indiceIntervalo] += 1;
-            }
-
+            
             int[] puntos = new int[cantIntervalos];
             for (int i = 0; i < cantIntervalos; i++)
             {
-                puntos[i] = vectorRangos[i];
+                puntos[i] = Convert.ToInt32(vectorRangos[i]);
             }
-
             grafico.Series.Clear();
             for ( int i = 0 ; i<puntos.Length  ; i++ )
             {
                 Series serie = grafico.Series.Add(series[i]);
-                
-
-                serie.Label = puntos[i].ToString();
+                //serie.Label = puntos[i].ToString();
                 serie.Points.Add(puntos[i]);
-
             }
             
 
