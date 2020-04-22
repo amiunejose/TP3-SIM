@@ -60,6 +60,8 @@
             this.grilla_generados = new System.Windows.Forms.DataGridView();
             this.grafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cb_intervalos = new System.Windows.Forms.ComboBox();
+            this.gb_pruebas = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.gb_1.SuspendLayout();
             this.gb_poisson.SuspendLayout();
             this.gb_normal.SuspendLayout();
@@ -67,6 +69,7 @@
             this.gb_uniforme.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_generados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grafico)).BeginInit();
+            this.gb_pruebas.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb_1
@@ -332,7 +335,7 @@
             // 
             // grafico
             // 
-            this.grafico.BackColor = System.Drawing.Color.RosyBrown;
+            this.grafico.BackColor = System.Drawing.Color.Gray;
             this.grafico.BorderlineColor = System.Drawing.Color.Linen;
             chartArea1.BackColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
@@ -365,19 +368,40 @@
             "30",
             "50",
             "100"});
-            this.cb_intervalos.Location = new System.Drawing.Point(662, 219);
+            this.cb_intervalos.Location = new System.Drawing.Point(668, 219);
             this.cb_intervalos.Name = "cb_intervalos";
             this.cb_intervalos.Size = new System.Drawing.Size(140, 21);
             this.cb_intervalos.TabIndex = 3;
             this.cb_intervalos.Text = "- Cantidad Intervalos - ";
             this.cb_intervalos.SelectedIndexChanged += new System.EventHandler(this.Cb_intervalos_SelectedIndexChanged);
             // 
+            // gb_pruebas
+            // 
+            this.gb_pruebas.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.gb_pruebas.Controls.Add(this.label12);
+            this.gb_pruebas.Location = new System.Drawing.Point(815, 3);
+            this.gb_pruebas.Name = "gb_pruebas";
+            this.gb_pruebas.Size = new System.Drawing.Size(220, 209);
+            this.gb_pruebas.TabIndex = 4;
+            this.gb_pruebas.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(198, 19);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Prueba de Bondad de Ajuste";
+            // 
             // Generador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(814, 565);
+            this.ClientSize = new System.Drawing.Size(1036, 565);
+            this.Controls.Add(this.gb_pruebas);
             this.Controls.Add(this.cb_intervalos);
             this.Controls.Add(this.grafico);
             this.Controls.Add(this.grilla_generados);
@@ -397,6 +421,8 @@
             this.gb_uniforme.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_generados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grafico)).EndInit();
+            this.gb_pruebas.ResumeLayout(false);
+            this.gb_pruebas.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -432,6 +458,8 @@
         private System.Windows.Forms.ComboBox cb_intervalos;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.MaskedTextBox txt_poisson_media;
+        private System.Windows.Forms.GroupBox gb_pruebas;
+        private System.Windows.Forms.Label label12;
     }
 }
 
