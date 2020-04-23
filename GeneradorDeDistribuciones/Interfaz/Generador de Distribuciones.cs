@@ -398,7 +398,7 @@ namespace GeneradorDeDistribuciones
 
             if (Convert.ToInt32(txt_cant_interv.Text) > 0)
             {
-                using (StreamWriter write = new StreamWriter(@"C:\Users\jose_\OneDrive\Escritorio\Jose\prueba.txt"))
+                using (StreamWriter write = new StreamWriter("pruebaNueva.txt"))
                 {
 
                     for (int i = 0; i < vectorDistribucion.Length; i++)
