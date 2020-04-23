@@ -221,6 +221,11 @@ namespace GeneradorDeDistribuciones
             return vectorRangos;
         }
 
+        //private double[] calcularRangosPoisson()
+        //{
+        //    double[] vectorFormateado = new double[0];
+        //}
+
 
 
 
@@ -244,15 +249,46 @@ namespace GeneradorDeDistribuciones
                 {
                     series[i] = i.ToString();
                 }
-
-
-
-
                 int[] puntos = new int[cantIntervalos];
-                for (int i = 0; i < cantIntervalos; i++)
+
+
+                // SI ESTA SELECCIONADO EL CHECK PARA POISSON
+                if (check_intervalos.Checked)
                 {
-                    puntos[i] = Convert.ToInt32(vectorRangos[i]);
+                    List<double> vectorFormateado = new List<double>();
+                    for (int i = 0; i < cantIntervalos; i++)
+                    {
+                        if (vectorRangos[i] > 0)
+                        {
+                            vectorFormateado.Add(vectorRangos[i]);
+                        }
+                    }
+
+                    series = new string[vectorFormateado.Count];
+                    for (int i = 0; i < vectorFormateado.Count; i++)
+                    {
+                        series[i] = i.ToString();
+                    }
+                    puntos = new int[vectorFormateado.Count];
+
+
+                    for (int i = 0; i < vectorFormateado.Count; i++)
+                    {
+                        puntos[i] = Convert.ToInt32(vectorFormateado[i]);
+                    }
+
+
+
                 }
+                else {
+                    for (int i = 0; i < cantIntervalos; i++)
+                    {
+                        puntos[i] = Convert.ToInt32(vectorRangos[i]);
+                    }
+                }
+
+
+                
                 grafico.Series.Clear();
                 for (int i = 0; i < puntos.Length; i++)
                 {

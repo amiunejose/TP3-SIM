@@ -435,9 +435,9 @@
             this.check_intervalos.AutoSize = true;
             this.check_intervalos.Location = new System.Drawing.Point(306, 219);
             this.check_intervalos.Name = "check_intervalos";
-            this.check_intervalos.Size = new System.Drawing.Size(254, 17);
+            this.check_intervalos.Size = new System.Drawing.Size(235, 17);
             this.check_intervalos.TabIndex = 5;
-            this.check_intervalos.Text = "Intervalos = Tamaño de serie (No recomendado)";
+            this.check_intervalos.Text = "Filtrar valores nulos (Poisson Recomendado)";
             this.check_intervalos.UseVisualStyleBackColor = true;
             this.check_intervalos.CheckedChanged += new System.EventHandler(this.Check_intervalos_CheckedChanged);
             // 
