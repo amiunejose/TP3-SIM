@@ -133,10 +133,10 @@ namespace GeneradorDeDistribuciones
                 GeneradorAleatorios generador = new GeneradorAleatorios();
 
                 // Uniforme (0-1)
-                vectorAleatorios = generador.generarAleatorios01(cantidad);
+                //vectorAleatorios = generador.generarAleatorios01(cantidad);
 
                 // Poisson
-                vectorDistribucion = generador.poisson(vectorAleatorios, mediaPoisson);
+                vectorDistribucion = generador.poisson(cantidad, mediaPoisson);
 
             }
 
@@ -158,22 +158,38 @@ namespace GeneradorDeDistribuciones
             DataTable myDataTable = new DataTable();
 
             //Creo columnas
-            myDataTable.Columns.Add("Indice", typeof(int));
-            myDataTable.Columns.Add("Distribucion Uniforme (0-1)", typeof(double));
-            myDataTable.Columns.Add("Distribucion Deseada", typeof(double));
+            
 
-            for (int i = 0; i < cantidad; i++)
+            if (cb_TipoDistribucion.SelectedIndex == 3)
             {
-                myDataTable.Rows.Add(i+1, vectorAleatorios[i], vectorDistribucion[i]);
+                myDataTable.Columns.Add("Indice", typeof(int));
+                myDataTable.Columns.Add("-", typeof(string));
+                myDataTable.Columns.Add("Distribucion Deseada", typeof(double));
+                for (int i = 0; i < cantidad; i++)
+                {
+                    myDataTable.Rows.Add(i + 1, "-", vectorDistribucion[i]);
+                }
+                grilla_generados.DataSource = myDataTable;
             }
-            grilla_generados.DataSource = myDataTable;
+            else
+            {
+                myDataTable.Columns.Add("Indice", typeof(int));
+                myDataTable.Columns.Add("Distribucion Uniforme (0-1)", typeof(double));
+                myDataTable.Columns.Add("Distribucion Deseada", typeof(double));
+                for (int i = 0; i < cantidad; i++)
+                {
+                    myDataTable.Rows.Add(i + 1, vectorAleatorios[i], vectorDistribucion[i]);
+                }
+                grilla_generados.DataSource = myDataTable;
+            }
+
+            
         }
 
 
 
         private double[] calcularRangos()
         {
-
             cantIntervalos = Convert.ToInt32(cb_intervalos.SelectedItem);
 
             if (check_intervalos.Checked)
@@ -191,7 +207,7 @@ namespace GeneradorDeDistribuciones
 
             for (int i = 0; i < vectorDistribucion.Length; i++)
             {
-                int indiceIntervalo = Convert.ToInt32(Math.Truncate((vectorDistribucion[i] - min) / salto));
+                long indiceIntervalo = Convert.ToInt64(Math.Truncate((vectorDistribucion[i] - min) / salto));
 
                 if (indiceIntervalo == cantIntervalos)
                 {
@@ -219,35 +235,33 @@ namespace GeneradorDeDistribuciones
             string[] series;
             double[] vectorRangos;
 
-            
-            vectorRangos = calcularRangos();
-
-
-            
-
-
-
-            series = new string[vectorRangos.Length];
-            for (int i = 0; i < cantIntervalos; i++)
+            if (cb_intervalos.SelectedItem != null)
             {
-                series[i] = i.ToString();
-            }
+                vectorRangos = calcularRangos();
 
-            
+                series = new string[vectorRangos.Length];
+                for (int i = 0; i < cantIntervalos; i++)
+                {
+                    series[i] = i.ToString();
+                }
 
+
+
+
+                int[] puntos = new int[cantIntervalos];
+                for (int i = 0; i < cantIntervalos; i++)
+                {
+                    puntos[i] = Convert.ToInt32(vectorRangos[i]);
+                }
+                grafico.Series.Clear();
+                for (int i = 0; i < puntos.Length; i++)
+                {
+                    Series serie = grafico.Series.Add(series[i]);
+                    //serie.Label = puntos[i].ToString();
+                    serie.Points.Add(puntos[i]);
+                }
+            }
             
-            int[] puntos = new int[cantIntervalos];
-            for (int i = 0; i < cantIntervalos; i++)
-            {
-                puntos[i] = Convert.ToInt32(vectorRangos[i]);
-            }
-            grafico.Series.Clear();
-            for ( int i = 0 ; i<puntos.Length  ; i++ )
-            {
-                Series serie = grafico.Series.Add(series[i]);
-                //serie.Label = puntos[i].ToString();
-                serie.Points.Add(puntos[i]);
-            }
             
 
         }
@@ -267,6 +281,7 @@ namespace GeneradorDeDistribuciones
 
         private void Cb_TipoDistribucion_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             btn_generar.Enabled = true;
 
             if (cb_TipoDistribucion.SelectedIndex == 0)

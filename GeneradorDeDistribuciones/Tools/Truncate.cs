@@ -17,7 +17,7 @@ namespace GeneradorDeDistribuciones.Tools
         public static double truncar (double num, int cantDecim)
         {
             double multiplicador = Math.Pow(10, cantDecim);
-            double temp = Convert.ToDouble(Convert.ToInt32(num * multiplicador));
+            double temp = Convert.ToDouble(Math.Truncate(num * multiplicador));
             double result = temp / multiplicador;
 
             return result;

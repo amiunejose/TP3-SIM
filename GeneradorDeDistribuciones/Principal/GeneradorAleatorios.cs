@@ -19,7 +19,12 @@ namespace GeneradorDeDistribuciones
             Random aleatorio = new Random();
             for (int i = 0; i < cantidad; i++)
             {
-                vectorAleatorios[i] = Truncate.truncar(aleatorio.NextDouble(), 4);
+                double num = Truncate.truncar(aleatorio.NextDouble(), 4);
+                if (num == 0)
+                {
+                    num = 0.0001;
+                }
+                vectorAleatorios[i] = num;
             }
 
             return vectorAleatorios;
@@ -110,28 +115,45 @@ namespace GeneradorDeDistribuciones
 
 
 
-        public double[] poisson(double[] vectorAleatorios, double media)
+        public double[] poisson(int cantidad, double media)
         {
-            int cantidad = vectorAleatorios.Length;
 
             double[] vectorPoisson = new double[cantidad];
 
-            
-            double A = Math.Exp(-media);
+            //def poisson(media):
+            //p = 1
+            //x = -1
+            //a = math.exp(-media)
+            //u = random.random()
+            //p = p * u
+            //x = x + 1
+            //while (p >= a):
+            //    u = random.random()
+            //    p = p * u
+            //    x = x + 1
+            //return x
 
-            for (int i = 0; i < cantidad ; i++)
+            Random aleatorio = new Random();
+            for (int i = 0; i < cantidad; i++)
             {
+                
                 double P = 1;
                 int X = -1;
-                do
-                {
+                double A = Math.Exp(-media);
+                double U = aleatorio.NextDouble();
 
-                    double U = vectorAleatorios[i];
+                P = P * U;
+                X = X + 1;
+                while (P >= A)
+                {
+                    U = aleatorio.NextDouble();
                     P = P * U;
                     X = X + 1;
-                } while (P >= A);
+                }
                 vectorPoisson[i] = X;
             }
+
+
             return vectorPoisson;
 
 
