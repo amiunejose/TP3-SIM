@@ -18,3 +18,8 @@ C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistr
 C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\bin\Debug\GeneradorDeDistribuciones.exe.config
 C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\bin\Debug\GeneradorDeDistribuciones.exe
 C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\bin\Debug\GeneradorDeDistribuciones.pdb
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\bin\Debug\CsvHelper.dll
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\GeneradorDeDistribuciones\obj\Debug\GeneradorDeDistribuciones.csproj.CopyComplete

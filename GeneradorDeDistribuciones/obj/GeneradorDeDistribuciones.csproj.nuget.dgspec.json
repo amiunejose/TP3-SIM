@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\jose_\\OneDrive\\Escritorio\\Jose\\Facultad\\GitHub\\TP3-SIM\\GeneradorDeDistribuciones\\GeneradorDeDistribuciones.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\jose_\\OneDrive\\Escritorio\\Jose\\Facultad\\GitHub\\TP3-SIM\\GeneradorDeDistribuciones\\GeneradorDeDistribuciones.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jose_\\OneDrive\\Escritorio\\Jose\\Facultad\\GitHub\\TP3-SIM\\GeneradorDeDistribuciones\\GeneradorDeDistribuciones.csproj",
+        "projectName": "GeneradorDeDistribuciones",
+        "projectPath": "C:\\Users\\jose_\\OneDrive\\Escritorio\\Jose\\Facultad\\GitHub\\TP3-SIM\\GeneradorDeDistribuciones\\GeneradorDeDistribuciones.csproj",
+        "packagesPath": "C:\\Users\\jose_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jose_\\OneDrive\\Escritorio\\Jose\\Facultad\\GitHub\\TP3-SIM\\GeneradorDeDistribuciones\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jose_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[15.0.5, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

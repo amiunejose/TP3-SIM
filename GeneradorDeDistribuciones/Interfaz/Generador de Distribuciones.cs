@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using GeneradorDeDistribuciones;
 using System.Windows.Forms.DataVisualization.Charting;
 using GeneradorDeDistribuciones.Tools;
+using CsvHelper;
+using System.IO;
 
 namespace GeneradorDeDistribuciones
 {
@@ -52,6 +54,8 @@ namespace GeneradorDeDistribuciones
             gb_normal.Enabled = false;
             gb_poisson.Enabled = false;
             cb_intervalos.Enabled = false;
+            gb_pruebas.Enabled = false;
+            check_intervalos.Enabled = false;
         }
 
         private void tomarDatos()
@@ -172,7 +176,7 @@ namespace GeneradorDeDistribuciones
 
             cantIntervalos = Convert.ToInt32(cb_intervalos.SelectedItem);
 
-            if (cb_TipoDistribucion.SelectedIndex == 3)
+            if (check_intervalos.Checked)
             {
                 cantIntervalos = vectorDistribucion.Length;
             }
@@ -302,7 +306,20 @@ namespace GeneradorDeDistribuciones
 
 
 
+        private bool validarCampoNumerico(MaskedTextBox textBox, bool permiteCero)
+        {
+            if (textBox.Text == "")
+            {
+                textBox.Text = "0";
+            }
 
+            if (permiteCero == false && Convert.ToDouble(textBox.Text) <= 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
 
 
 
@@ -310,9 +327,36 @@ namespace GeneradorDeDistribuciones
 
         private void Btn_generar_Click(object sender, EventArgs e)
         {
-            tomarDatos();
-            llenarGrilla();
-            cb_intervalos.Enabled = true;
+
+            if (validarCampoNumerico(txt_cantidad, false))
+            {
+                if (cb_TipoDistribucion.SelectedIndex != 2)
+                {
+                    tomarDatos();
+                    llenarGrilla();
+                    cb_intervalos.Enabled = true;
+                    gb_pruebas.Enabled = true;
+                    check_intervalos.Enabled = true;
+                    MessageBox.Show("La serie se genero con exito!");
+                }
+                if (cb_TipoDistribucion.SelectedIndex == 2 && Convert.ToDouble(txt_cantidad.Text) > 1)
+                {
+                    tomarDatos();
+                    llenarGrilla();
+                    cb_intervalos.Enabled = true;
+                    gb_pruebas.Enabled = true;
+                    check_intervalos.Enabled = true;
+                    MessageBox.Show("La serie se genero con exito!");
+                } else {
+                    if (cb_TipoDistribucion.SelectedIndex == 2)
+                    { MessageBox.Show("Debe colocar una cantidad mayor a 1 para distribucion normal"); }
+                     }
+            }
+            else { MessageBox.Show("Debe colocar una cantidad mayor a 0");}
+
+
+
+            
         }
 
 
@@ -326,6 +370,55 @@ namespace GeneradorDeDistribuciones
         private void Cb_intervalos_SelectedIndexChanged(object sender, EventArgs e)
         {
             llenarGrafico();
+        }
+
+
+
+        private void Btn_csv_Click(object sender, EventArgs e)
+        {
+            if (txt_cant_interv.Text == "")
+            {
+                txt_cant_interv.Text = "0";
+            }
+
+            if (Convert.ToInt32(txt_cant_interv.Text) > 0)
+            {
+                using (StreamWriter write = new StreamWriter(@"C:\Users\jose_\OneDrive\Escritorio\Jose\prueba.txt"))
+                {
+
+                    for (int i = 0; i < vectorDistribucion.Length; i++)
+                    {
+                        var temp = vectorDistribucion[i].ToString();
+                        write.Write(temp.Replace(",","."));
+                        if (i != vectorDistribucion.Length - 1)
+                        {
+                            write.Write(";");
+                        }
+                    }
+                    write.WriteLine("");
+                    write.WriteLine(cb_TipoDistribucion.SelectedIndex);
+                    write.WriteLine(txt_cant_interv.Text);
+                }
+            }
+            else { MessageBox.Show("Debe colocar un valor de intervalos mayor a 0");  }
+
+            
+
+        }
+
+        private void Check_intervalos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_intervalos.Checked)
+            {
+                cb_intervalos.Enabled = false;
+                llenarGrafico();
+            }
+
+            if (check_intervalos.Checked == false)
+            {
+                cb_intervalos.Enabled = true;
+                llenarGrafico();
+            }
         }
     }
 }

@@ -61,7 +61,11 @@
             this.grafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cb_intervalos = new System.Windows.Forms.ComboBox();
             this.gb_pruebas = new System.Windows.Forms.GroupBox();
+            this.btn_csv = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_cant_interv = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.check_intervalos = new System.Windows.Forms.CheckBox();
             this.gb_1.SuspendLayout();
             this.gb_poisson.SuspendLayout();
             this.gb_normal.SuspendLayout();
@@ -378,12 +382,43 @@
             // gb_pruebas
             // 
             this.gb_pruebas.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.gb_pruebas.Controls.Add(this.btn_csv);
+            this.gb_pruebas.Controls.Add(this.label13);
+            this.gb_pruebas.Controls.Add(this.txt_cant_interv);
             this.gb_pruebas.Controls.Add(this.label12);
             this.gb_pruebas.Location = new System.Drawing.Point(815, 3);
             this.gb_pruebas.Name = "gb_pruebas";
             this.gb_pruebas.Size = new System.Drawing.Size(220, 209);
             this.gb_pruebas.TabIndex = 4;
             this.gb_pruebas.TabStop = false;
+            // 
+            // btn_csv
+            // 
+            this.btn_csv.Location = new System.Drawing.Point(61, 100);
+            this.btn_csv.Name = "btn_csv";
+            this.btn_csv.Size = new System.Drawing.Size(103, 23);
+            this.btn_csv.TabIndex = 3;
+            this.btn_csv.Text = "Exportar TXT";
+            this.btn_csv.UseVisualStyleBackColor = true;
+            this.btn_csv.Click += new System.EventHandler(this.Btn_csv_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 60);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(98, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Cantidad Intervalos";
+            // 
+            // txt_cant_interv
+            // 
+            this.txt_cant_interv.Location = new System.Drawing.Point(114, 57);
+            this.txt_cant_interv.Mask = "9999";
+            this.txt_cant_interv.Name = "txt_cant_interv";
+            this.txt_cant_interv.Size = new System.Drawing.Size(100, 20);
+            this.txt_cant_interv.TabIndex = 1;
+            this.txt_cant_interv.ValidatingType = typeof(int);
             // 
             // label12
             // 
@@ -395,12 +430,24 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Prueba de Bondad de Ajuste";
             // 
+            // check_intervalos
+            // 
+            this.check_intervalos.AutoSize = true;
+            this.check_intervalos.Location = new System.Drawing.Point(306, 219);
+            this.check_intervalos.Name = "check_intervalos";
+            this.check_intervalos.Size = new System.Drawing.Size(291, 17);
+            this.check_intervalos.TabIndex = 5;
+            this.check_intervalos.Text = "Intervalos = Tamaño de serie (Recomendado a Poisson)";
+            this.check_intervalos.UseVisualStyleBackColor = true;
+            this.check_intervalos.CheckedChanged += new System.EventHandler(this.Check_intervalos_CheckedChanged);
+            // 
             // Generador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1036, 565);
+            this.Controls.Add(this.check_intervalos);
             this.Controls.Add(this.gb_pruebas);
             this.Controls.Add(this.cb_intervalos);
             this.Controls.Add(this.grafico);
@@ -424,6 +471,7 @@
             this.gb_pruebas.ResumeLayout(false);
             this.gb_pruebas.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -460,6 +508,10 @@
         private System.Windows.Forms.MaskedTextBox txt_poisson_media;
         private System.Windows.Forms.GroupBox gb_pruebas;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btn_csv;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.MaskedTextBox txt_cant_interv;
+        private System.Windows.Forms.CheckBox check_intervalos;
     }
 }
 
