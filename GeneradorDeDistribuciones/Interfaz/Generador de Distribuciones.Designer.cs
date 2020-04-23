@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gb_1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -323,7 +323,7 @@
             // txt_cantidad
             // 
             this.txt_cantidad.Location = new System.Drawing.Point(131, 21);
-            this.txt_cantidad.Mask = "999999";
+            this.txt_cantidad.Mask = "9999999";
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(82, 20);
             this.txt_cantidad.TabIndex = 0;
@@ -341,24 +341,24 @@
             // 
             this.grafico.BackColor = System.Drawing.Color.Gray;
             this.grafico.BorderlineColor = System.Drawing.Color.Linen;
-            chartArea2.BackColor = System.Drawing.Color.White;
-            chartArea2.Name = "ChartArea1";
-            chartArea2.ShadowColor = System.Drawing.Color.White;
-            this.grafico.ChartAreas.Add(chartArea2);
-            legend2.Enabled = false;
-            legend2.Name = "Legend1";
-            this.grafico.Legends.Add(legend2);
+            chartArea1.BackColor = System.Drawing.Color.White;
+            chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.White;
+            this.grafico.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.grafico.Legends.Add(legend1);
             this.grafico.Location = new System.Drawing.Point(291, 246);
             this.grafico.Name = "grafico";
             this.grafico.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.ChartArea = "ChartArea1";
-            series2.EmptyPointStyle.Color = System.Drawing.Color.White;
-            series2.LabelBackColor = System.Drawing.Color.Transparent;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.Transparent;
-            series2.SmartLabelStyle.Enabled = false;
-            this.grafico.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.EmptyPointStyle.Color = System.Drawing.Color.White;
+            series1.LabelBackColor = System.Drawing.Color.Transparent;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.SmartLabelStyle.CalloutLineColor = System.Drawing.Color.Transparent;
+            series1.SmartLabelStyle.Enabled = false;
+            this.grafico.Series.Add(series1);
             this.grafico.Size = new System.Drawing.Size(517, 315);
             this.grafico.TabIndex = 2;
             // 
