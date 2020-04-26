@@ -24,6 +24,7 @@ namespace GeneradorDeDistribuciones
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Generador());
 
+
         }
     }
 }

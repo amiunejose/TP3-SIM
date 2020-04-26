@@ -434,7 +434,7 @@ namespace GeneradorDeDistribuciones
 
             if (Convert.ToInt32(txt_cant_interv.Text) > 0)
             {
-                using (StreamWriter write = new StreamWriter("data.txt"))
+                using (StreamWriter write = new StreamWriter("C:\\Users\\jose_\\OneDrive\\Escritorio\\Jose\\Facultad\\GitHub\\TP3-SIM\\Analizador Chi-Cuadrado\\2020Simulacion4k1-tp2\\test_files\\data.txt"))
                 {
 
                     for (int i = 0; i < vectorDistribucion.Length; i++)
@@ -449,6 +449,8 @@ namespace GeneradorDeDistribuciones
                     write.WriteLine("");
                     write.WriteLine(cb_TipoDistribucion.SelectedIndex);
                     write.WriteLine(txt_cant_interv.Text);
+                    // String command = @"C:\Users\jose_\OneDrive\Escritorio\Jose\Facultad\GitHub\TP3-SIM\Analizador Chi-Cuadrado\2020Simulacion4k1-tp2\\TP3.bat"; ProcessInfo = new ProcessStartInfo("cmd.exe", "/c " + command);
+                    // System.Diagnostics.Process.Start("C:\\Users\\jose_\\OneDrive\\Escritorio\\Jose\\Facultad\\GitHub\\TP3-SIM\\Analizador Chi-Cuadrado\\2020Simulacion4k1-tp2\\TP3.bat");
                 }
             }
             else { MessageBox.Show("Debe colocar un valor de intervalos mayor a 0");  }
